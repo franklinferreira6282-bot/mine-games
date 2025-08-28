@@ -112,7 +112,7 @@ h1 { text-align: center; margin-top: 20px; }
 #board {
   display: grid;
   grid-template-columns: repeat(5, 120px); /* tamanho maior */
-  grid-gap: 50px; /* espaço maior entre quadrados */
+  grid-gap: 20px; /* espaço maior entre quadrados */
   justify-content: center;
   margin-top: 160px; /* distância do topo da tela */
 }
