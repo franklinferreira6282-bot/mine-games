@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mines 5x5</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Tela 1: Login / Registro -->
+<div id="tela1">
+  <h1>💎 Mines Login</h1>
+  <input type="text" id="username" placeholder="Nome">
+  <input type="password" id="password" placeholder="Senha">
+  <div>
+    <button onclick="register()">Registrar</button>
+    <button onclick="login()">Logar</button>
+  </div>
+  <div id="loginMsg"></div>
+</div>
+
+<!-- Tela 2: Jogo -->
+<div id="tela2">
+  <button id="logoutBtn" onclick="logout()">SAIR 🔙</button>
+  <h1>💎 Mines</h1>
+  <div id="controls">
+    <label>BOMBAS: <input id="bombsInput" type="number" value="5" min="1" max="24"></label>
+    <label>APOSTA: <input id="betInput" type="number" value="10" min="1"></label>
+    <button onclick="startGame()">Iniciar Jogo</button>
+    <button onclick="cashOut()">Sacar</button>
+  </div>
+  <h3 id="status">Clique em "Iniciar Jogo"</h3>
+  <h3 id="balance">Saldo: 100</h3>
+  <div id="board"></div>
+</div>
+
+<!-- Alerta Customizado -->
+<div id="customAlert">
+  <div>
+    <p>LIMITE MÁXIMO DE 24 BOMBAS</p>
+    <button onclick="document.getElementById('customAlert').style.display='none'">OK</button>
+  </div>
+</div>
+
+</body>
+</html>
