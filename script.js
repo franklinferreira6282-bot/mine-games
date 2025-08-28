@@ -162,20 +162,19 @@ function renderBoard() {
 function reveal(i) {
   if (gameOver || revealed[i]) return;
   if (board[i] === "bomb") {
-    soundBomb.play(); //som da bomba
     for (let j = 0; j < board.length; j++) revealed[j] = true;
     gameOver = true;
     renderBoard();
     document.getElementById("board").children[i].style.border = "3px solid yellow";
     document.getElementById("status").innerText = "💥 Você perdeu!";
+    new Audio('bomb.mp3').play();
     console.log("💥 Bomba revelada: jogo perdido");
   } else {
     revealed[i] = true;
-    soundDiamond.currentTime = 0;
-    soundDiamond.play(); //som do diamante
     multiplier += 0.3 + (bombs * 0.05);
     document.getElementById("status").innerText = "💎 Achou um diamante! Multiplicador: x" + multiplier.toFixed(2);
     renderBoard();
+    new Audio('diamond.mp3').play();
     console.log("💎 Diamante revelado, multiplicador atualizado: x" + multiplier.toFixed(2));
   }
 }
