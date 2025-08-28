@@ -118,8 +118,8 @@ h1 { text-align: center; margin-top: 20px; }
 }
 
 .cell {
-  width: 100px;   /* aumentei */
-  height: 100px;  /* aumentei */
+  width: 50px;   /* aumentei */
+  height: 50px;  /* aumentei */
   background: #333;
   display: flex;
   align-items: center;
