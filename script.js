@@ -12,6 +12,10 @@ let balance = 100;
 let gameOver = true;
 let boardTopMargin = 50; // distância da grade do topo
 
+// Sons
+const soundDiamond = new Audio('diamond.mp3'); // caminho do som do diamante
+const soundBomb = new Audio('bomb.mp3');       // caminho do som da bomba
+
 console.log("🟢 Sistema iniciado: Configurações iniciais carregadas");
 
 // --- Tela inicial visível ---
@@ -158,6 +162,7 @@ function renderBoard() {
 function reveal(i) {
   if (gameOver || revealed[i]) return;
   if (board[i] === "bomb") {
+    soundBomb.play(); //som da bomba
     for (let j = 0; j < board.length; j++) revealed[j] = true;
     gameOver = true;
     renderBoard();
@@ -166,6 +171,7 @@ function reveal(i) {
     console.log("💥 Bomba revelada: jogo perdido");
   } else {
     revealed[i] = true;
+    soundDiamond.play(); //som do diamante
     multiplier += 0.3 + (bombs * 0.05);
     document.getElementById("status").innerText = "💎 Achou um diamante! Multiplicador: x" + multiplier.toFixed(2);
     renderBoard();
