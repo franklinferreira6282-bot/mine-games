@@ -111,20 +111,20 @@ h1 { text-align: center; margin-top: 20px; }
 
 #board {
   display: grid;
-  grid-template-columns: repeat(5, 80px); /* tamanho padrão 5x5 */
-  grid-gap: 40px;
+  grid-template-columns: repeat(5, 120px); /* tamanho maior */
+  grid-gap: 50px; /* espaço maior entre quadrados */
   justify-content: center;
   margin-top: 160px; /* distância do topo da tela */
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
+  width: 150px;   /* aumentei */
+  height: 150px;  /* aumentei */
   background: #333;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 40px; /* ícones maiores */
   border-radius: 6px;
   cursor: pointer;
   transition: 0.2s;
