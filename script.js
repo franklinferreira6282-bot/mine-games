@@ -171,6 +171,7 @@ function reveal(i) {
     console.log("💥 Bomba revelada: jogo perdido");
   } else {
     revealed[i] = true;
+    soundDiamond.currentTime = 0;
     soundDiamond.play(); //som do diamante
     multiplier += 0.3 + (bombs * 0.05);
     document.getElementById("status").innerText = "💎 Achou um diamante! Multiplicador: x" + multiplier.toFixed(2);
